@@ -5,7 +5,7 @@ export async function fetchCars() {
         'x-rapidapi-key': '2a393ee145msh319e6e6f6d11070p1e6d91jsn8914e4ba7121',
         'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
     }
-    const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera', {headers: headers});
+    const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla', {headers: headers}); // * fix it to retrieve another model
 
     const result = await response.json();
 
@@ -28,6 +28,18 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
     return rentalRatePerDay.toFixed(0);
   };
 
-//   export const generateCarImageUrl = (car: CarProps, angel?: string) => {
+  export const generateCarImageUrl = (car: CarProps, angle?: string) => {
+    const url = new URL('https://cdn.imagin.studio/getimage');
 
-//   }
+    const { make, year,model } = car;
+
+    url.searchParams.append('customer','hrjsmastery');
+    url.searchParams.append('make', make);
+    url.searchParams.append('modelFamily', model.split(' ')[0]);
+    url.searchParams.append('zoomType', 'fullscreen');
+    url.searchParams.append('modelYear', `${year}`);
+    url.searchParams.append('angle', `${angle}`);
+    
+    return `${url}`; 
+
+  }
