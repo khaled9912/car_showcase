@@ -1,5 +1,5 @@
-# car show case (still working on it)
-## I have created this project using Next, TypeScript, Tailwind, and Headless ui. it will give you the ability to show all cars and search them with manufacturer and model. and it is reponsive for mobiles and tablets. I have created it to solidify my knowledge in NextJs.
+# car show case 
+## I have created this project using Next, TypeScript, Tailwind, and Headless ui. it will give you the ability to show all cars and search them with manufacturer and model. and it is reponsive for mobiles and tablets. I have created it as a car show case.
 
 ## installation
 1. Prerequisites: basics knowledge in nextjs, typescript, and tailwind.
